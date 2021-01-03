@@ -11,7 +11,7 @@ let input = [
     ['7', '.', '.', '.', '2', '.', '.', '.', '6'],
     ['.', '6', '.', '.', '.', '.', '2', '8', '.'],
     ['.', '.', '.', '4', '1', '9', '.', '.', '5'],
-    ['.', '.', '.', '.', '8', '.', '.', '7', '9'],
+    ['.', '.', '.', '.', '8', '.', '.', '7', '9']
 ];
 
 let sudokuSolver = (board) => {
@@ -47,8 +47,8 @@ let sudokuSolver = (board) => {
         const boxRow = Math.floor(r / boxSize) * boxSize;
         const boxCol = Math.floor(c / boxSize) * boxSize;
 
-        for (let i = boxRow; i < boxSize; i++) {
-            for (let j = boxCol; j < boxSize; j++) {
+        for (let i = boxRow; i < boxRow + boxSize; i++) {
+            for (let j = boxCol; j < boxCol + boxSize; j++) {
                 if (board[i][j] === num && i !== r && j !== c) {
                     return false;
                 }
